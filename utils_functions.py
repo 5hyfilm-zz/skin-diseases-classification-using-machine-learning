@@ -4,6 +4,7 @@ import os
 import itertools
 import json
 import cv2
+import glob
 
 import tensorflow as tf
 from tensorflow.keras import backend as K
@@ -24,6 +25,18 @@ def plotImages(images_arr):
         ax.imshow(img)
     plt.tight_layout()
     plt.show()
+
+def plot_all_img_dir(directory):
+  all_img_list = []
+  for img in glob.glob(directory):
+    img_array = cv2.imread(img)
+    all_img_list.append(img_array)
+
+  plt.figure(figsize=(10,10))
+  columns = 5
+  for i, image in enumerate(all_img_list):
+      plt.subplot(len(all_img_list) / columns + 1, columns, i + 1)
+      plt.imshow(image)
 
 def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues):
     """
@@ -224,6 +237,5 @@ def compute_saliency(model, guided_model, img_path, layer_name='block5_conv3', c
         plt.title('Guided GradCAM')
         plt.axis('off')
         plt.imshow(np.flip(deprocess_image(guided_gradcam[0]), -1))
-        plt.show()
-        
+        plt.show()      
     return gradcam, gb, guided_gradcam
