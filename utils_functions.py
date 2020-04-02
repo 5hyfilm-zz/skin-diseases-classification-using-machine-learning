@@ -10,6 +10,7 @@ import tensorflow as tf
 from tensorflow.keras import backend as K
 from tensorflow.python.framework import ops
 from keras.preprocessing import image
+from keras.applications import preprocess_input
 
 img_width = 224
 img_height = 224
