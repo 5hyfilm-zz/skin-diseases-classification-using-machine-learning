@@ -7,10 +7,10 @@ import cv2
 import glob
 
 import tensorflow as tf
-from tf.keras import backend as K
-from tf.python.framework import ops
-from tf.keras.preprocessing import image
-from tf.keras.applications.nasnet import preprocess_input
+from tensorflow.keras import backend as K
+from tensorflow.python.framework import ops
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.nasnet import preprocess_input
 
 img_width = 224
 img_height = 224
