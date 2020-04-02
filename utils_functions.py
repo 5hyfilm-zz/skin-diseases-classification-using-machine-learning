@@ -11,6 +11,9 @@ from tensorflow.keras import backend as K
 from tensorflow.python.framework import ops
 from keras.preprocessing import image
 
+img_width = 224
+img_height = 224
+
 def mkdir_dir(dir):
     if not os.path.exists(dir):
         os.mkdir(dir)
@@ -120,23 +123,23 @@ def decode_predictions(preds, top=5, class_list_path='/content/SKIN_DATA/skin_in
     results.append(result)
   return results
 
-def build_guided_model():
-    """Function returning modified model.
+# def build_guided_model():
+#     """Function returning modified model.
     
-    Changes gradient function for all ReLu activations
-    according to Guided Backpropagation.
-    """
-    if "GuidedBackProp" not in ops._gradient_registry._registry:
-        @ops.RegisterGradient("GuidedBackProp")
-        def _GuidedBackProp(op, grad):
-            dtype = op.inputs[0].dtype
-            return grad * tf.cast(grad > 0., dtype) * \
-                   tf.cast(op.inputs[0] > 0., dtype)
+#     Changes gradient function for all ReLu activations
+#     according to Guided Backpropagation.
+#     """
+#     if "GuidedBackProp" not in ops._gradient_registry._registry:
+#         @ops.RegisterGradient("GuidedBackProp")
+#         def _GuidedBackProp(op, grad):
+#             dtype = op.inputs[0].dtype
+#             return grad * tf.cast(grad > 0., dtype) * \
+#                    tf.cast(op.inputs[0] > 0., dtype)
 
-    g = tf.get_default_graph()
-    with g.gradient_override_map({'Relu': 'GuidedBackProp'}):
-        new_model = build_model()
-    return new_model
+#     g = tf.get_default_graph()
+#     with g.gradient_override_map({'Relu': 'GuidedBackProp'}):
+#         new_model = build_model()
+#     return new_model
 
 def guided_backprop(input_model, images, layer_name):
     """Guided Backpropagation method for visualizing input saliency."""
