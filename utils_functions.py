@@ -27,6 +27,11 @@ def plot_img_dir(directory):
   for img in glob.glob(directory):
     img_array = cv2.imread(img)
     all_img_list.append(img_array)
+    plt.figure(figsize=(10,10))
+    columns = 5
+    for i, image in enumerate(all_img_list):
+        plt.subplot(len(all_img_list) / columns + 1, columns, i + 1)
+        plt.imshow(image)
 
 def plot_img_generator(images_arr):
     fig, axes = plt.subplots(1, 5, figsize=(10,10))
@@ -35,12 +40,6 @@ def plot_img_generator(images_arr):
         ax.imshow(img)
     plt.tight_layout()
     plt.show()
-
-    plt.figure(figsize=(10,10))
-    columns = 5
-    for i, image in enumerate(all_img_list):
-        plt.subplot(len(all_img_list) / columns + 1, columns, i + 1)
-        plt.imshow(image)
 
 def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues):
     """
@@ -54,21 +53,18 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix'
         print('Confusion matrix, without normalization')
 
     print(cm)
-
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()
     tick_marks = np.arange(len(classes))
     plt.xticks(tick_marks, classes, rotation=45)
     plt.yticks(tick_marks, classes)
-
     fmt = '.2f' if normalize else 'd'
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         plt.text(j, i, format(cm[i, j], fmt),
                  horizontalalignment="center",
                  color="white" if cm[i, j] > thresh else "black")
-
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.tight_layout()
@@ -93,11 +89,9 @@ def deprocess_image(x):
     x -= x.mean()
     x /= (x.std() + 1e-5)
     x *= 0.1
-
     # clip to [0, 1]
     x += 0.5
     x = np.clip(x, 0, 1)
-
     # convert to RGB array
     x *= 255
     if tf.keras.backend.image_data_format() == 'th':
@@ -159,13 +153,10 @@ def grad_cam(input_model, image, cls, layer_name):
     # Normalize if necessary
     # grads = normalize(grads)
     gradient_function = K.function([input_model.input], [conv_output, grads])
-
     output, grads_val = gradient_function([image])
     output, grads_val = output[0, :], grads_val[0, :, :, :]
-
     weights = np.mean(grads_val, axis=(0, 1))
     cam = np.dot(output, weights)
-
     # Process CAM
     cam = cv2.resize(cam, (img_width, img_height), cv2.INTER_LINEAR)
     cam = np.maximum(cam, 0)
@@ -179,11 +170,9 @@ def grad_cam_batch(input_model, images, classes, layer_name):
     layer_output = input_model.get_layer(layer_name).output
     grads = tf.gradients(loss, layer_output)[0]
     gradient_fn = K.function([input_model.input, K.learning_phase()], [layer_output, grads])
-
     conv_output, grads_val = gradient_fn([images, 0])    
     weights = np.mean(grads_val, axis=(1, 2))
     cams = np.einsum('ijkl,il->ijk', conv_output, weights)
-    
     # Process CAMs
     new_cams = np.empty((images.shape[0], img_height, img_width))
     for i in range(new_cams.shape[0]):
@@ -200,7 +189,6 @@ def compute_saliency(model, guided_model, img_path, layer_name='block5_conv3', c
         -cls: class number to localize (-1 for most probable class).
     """
     preprocessed_input = load_image(img_path)
-
     predictions = model.predict(preprocessed_input)
     top_n = 5
     top = decode_predictions(predictions, top=top_n)[0]
@@ -211,19 +199,16 @@ def compute_saliency(model, guided_model, img_path, layer_name='block5_conv3', c
     if cls == -1:
         cls = np.argmax(predictions)
     class_name = decode_predictions(np.eye(1, 4, cls))[0][0][1]
-    print("Explanation for '{}'".format(class_name))
-    
+    print("Explanation for '{}'".format(class_name))  
     gradcam = grad_cam(model, preprocessed_input, cls, layer_name)
     gb = guided_backprop(guided_model, preprocessed_input, layer_name)
     guided_gradcam = gb * gradcam[..., np.newaxis]
-
     if save:
         jetcam = cv2.applyColorMap(np.uint8(255 * gradcam), cv2.COLORMAP_JET)
         jetcam = (np.float32(jetcam) + load_image(img_path, preprocess=False)) / 2
         cv2.imwrite('gradcam.jpg', np.uint8(jetcam))
         cv2.imwrite('guided_backprop.jpg', deprocess_image(gb[0]))
         cv2.imwrite('guided_gradcam.jpg', deprocess_image(guided_gradcam[0]))
-    
     if visualize:
         plt.figure(figsize=(15, 10))
         plt.subplot(131)
@@ -231,12 +216,10 @@ def compute_saliency(model, guided_model, img_path, layer_name='block5_conv3', c
         plt.axis('off')
         plt.imshow(load_image(img_path, preprocess=False))
         plt.imshow(gradcam, cmap='jet', alpha=0.5)
-
         plt.subplot(132)
         plt.title('Guided Backprop')
         plt.axis('off')
         plt.imshow(np.flip(deprocess_image(gb[0]), -1))
-        
         plt.subplot(133)
         plt.title('Guided GradCAM')
         plt.axis('off')
