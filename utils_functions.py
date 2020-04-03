@@ -22,19 +22,19 @@ def mkdir_dir(dir):
     else:    
         print("Directory " , dir,  " already exists")
 
-def plotImages(images_arr):
+def plot_img_dir(directory):
+  all_img_list = []
+  for img in glob.glob(directory):
+    img_array = cv2.imread(img)
+    all_img_list.append(img_array)
+
+def plot_img_generator(images_arr):
     fig, axes = plt.subplots(1, 5, figsize=(10,10))
     axes = axes.flatten()
     for img, ax in zip(images_arr, axes):
         ax.imshow(img)
     plt.tight_layout()
     plt.show()
-
-def plot_all_img_dir(directory):
-  all_img_list = []
-  for img in glob.glob(directory):
-    img_array = cv2.imread(img)
-    all_img_list.append(img_array)
 
   plt.figure(figsize=(10,10))
   columns = 5
