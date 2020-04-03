@@ -42,6 +42,12 @@ def plot_all_img_dir(directory):
       plt.subplot(len(all_img_list) / columns + 1, columns, i + 1)
       plt.imshow(image)
 
+  plt.figure(figsize=(10,10))
+  columns = 5
+  for i, image in enumerate(all_img_list):
+      plt.subplot(len(all_img_list) / columns + 1, columns, i + 1)
+      plt.imshow(image)
+
 def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues):
     """
     This function prints and plots the confusion matrix.
