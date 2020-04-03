@@ -22,6 +22,12 @@ def mkdir_dir(dir):
     else:    
         print("Directory " , dir,  " already exists")
 
+def img_label(dir, label):
+    label_list = []
+    for img in glob.glob(dir):
+        label_list.append(label)
+    print(dir, label)
+
 def plot_img_dir(directory):
   all_img_list = []
   for img in glob.glob(directory):
