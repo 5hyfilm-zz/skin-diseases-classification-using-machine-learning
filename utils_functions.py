@@ -5,12 +5,16 @@ import itertools
 import json
 import cv2
 import glob
+import shutil
 
 import tensorflow as tf
 from tensorflow.keras import backend as K
 from tensorflow.python.framework import ops
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.nasnet import preprocess_input
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import load_img
 
 img_width = 224
 img_height = 224
@@ -83,6 +87,20 @@ def load_image(path, preprocess=True):
         x = np.expand_dims(x, axis=0)
         x = preprocess_input(x)
     return x
+
+def augment_func(directory, train_aug_dir):
+    os.mkdir(directory + '_aug/')
+    for img in glob.glob(directory + '/*.jpg'):
+        image = load_img(img)
+        image = img_to_array(image)
+        image = np.expand_dims(image, axis=0)
+        total = 0
+        img_gen = aug.flow(image, batch_size=1, save_to_dir=directory + '_aug', save_prefix='image', save_format='jpg')
+        for img in img_gen:
+            total += 1
+            if total == number:
+                    break
+    shutil.move(directory + '_aug', train_aug_dir)
 
 def deprocess_image(x):
     """Same normalization as in:
