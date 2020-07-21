@@ -22,8 +22,8 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 Some line of code are wrong because I changed some filenames and I did not update those filenames, so if you want to run code you need to update some line of code
 
 ## Usage
-* Clone this [respository](https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA)
+* Clone this [respository](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning)
 
-* Terminal: `git clone https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA`
+* Terminal: `git clone https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning`
 
-* Jupyter Notebook: `!https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA`
+* Jupyter Notebook: `!https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning`
