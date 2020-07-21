@@ -19,7 +19,7 @@ These classes no need to consult a doctor.
 
 ## Process
 
-Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T)and transfer weights to [PJ6103_DATA](https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA)
+Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T) and transfer weights to [PJ6103_DATA](https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA) then ensemble the best 3 models for the best result.
 
 Some line of code are wrong because I changed some filenames and I did not update those filenames, so if you want to run code you need to update some line of code
 
