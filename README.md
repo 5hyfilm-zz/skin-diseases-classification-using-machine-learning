@@ -31,7 +31,7 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 
 ## Results
 ### Confusion Matrix
-![alt text](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png=272.5x115)
+![alt text](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png =272.5x115)
 
 ### Classification Report
 
