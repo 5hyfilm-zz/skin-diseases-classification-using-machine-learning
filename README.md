@@ -42,13 +42,9 @@ After Ensemble using Arithmetic Mean with 3 models
 ### Grad-CAM
 <p>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="200" height="200">
-    <figcaption>Fig.1 -</figcaption>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/nm.png width="200" height="200">
-    <figcaption>Fig.1 -</figcaption>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ps.png width="200" height="200">
-    <figcaption>Fig.1  Italy.</figcaption>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/sk.png width="200" height="200">
-    <figcaption>Fig.1</figcaption>
 </p>
 
 ## Caution
