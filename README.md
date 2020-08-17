@@ -31,24 +31,22 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 
 ## Results
 ### Confusion Matrix and Classification Report
-Ensemble 
-<center>
+After Ensemble using Arithmetic Mean with 3 models
+
 <p>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png width="230" height="230">
 
 <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/report.png width="545" height="230">
 </p>
-</center>
+
 
 ### Grad-CAM
-<center>
 <p>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="200" height="200">
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/nm.png width="200" height="200">
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ps.png width="200" height="200">
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/sk.png width="200" height="200">
 </p>
-</center>
 
 ## Caution
 Some line of code are wrong because I changed some filenames and I did not update those filenames, so if you want to run code you need to update some line of code.
