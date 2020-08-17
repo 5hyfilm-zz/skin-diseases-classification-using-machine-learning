@@ -30,6 +30,12 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 * Jupyter Notebook: `!https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning`
 
 ## Results
+### Confusion Matrix
+![alt text](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png)
+
+### Classification Report
+![alt text](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/report.png)
+
 ![alt text](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png)
 
 ## Caution
