@@ -31,13 +31,13 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 
 ## Results
 ### Confusion Matrix
-<img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png width="272.5" height="115">
+<img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png width="545" height="230">
 
 ### Classification Report
 
 ![](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/report.png)
 
-![alt text](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png)
+<img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width=""
 
 ## Caution
 Some line of code are wrong because I changed some filenames and I did not update those filenames, so if you want to run code you need to update some line of code.
