@@ -30,14 +30,16 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 * Jupyter Notebook: `!https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning`
 
 ## Results
-### Confusion Matrix
+### Confusion Matrix and Classification Report
 <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png>
-
-### Classification Report
 
 ![](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/report.png)
 
-<img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width=""
+<p fload="left>
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="150" height="150">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="150" height="150">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="150" height="150">
+</p>
 
 ## Caution
 Some line of code are wrong because I changed some filenames and I did not update those filenames, so if you want to run code you need to update some line of code.
