@@ -35,7 +35,7 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 
 ![](https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/report.png)
 
-<p float="left>
+<p>
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="150" height="150">
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="150" height="150">
     <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="150" height="150">
