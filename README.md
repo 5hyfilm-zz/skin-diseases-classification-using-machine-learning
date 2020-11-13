@@ -10,7 +10,7 @@ These classes no need to consult a doctor.
 - Normal [nm]
 
 **Dangerous skin diseases**
-These classes no need to consult a doctor.
+These classes need to consult a doctor.
 - Psoriasis [ps]
 - Seborrhoeic Keratosis [sk]
 
