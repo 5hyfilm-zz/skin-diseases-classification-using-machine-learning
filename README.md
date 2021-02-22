@@ -1,4 +1,4 @@
-# JSTP #22 Skin Diseases Classification Using Machine Learning
+Skin Diseases Classification Using Machine Learning
 This was JSTP #22 project about using machine learning to classify most 10 skin diseases in Thailand but I get only 4 skin diseases in [PJ6103_DATA](https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA)
 
 ## [PJ6103_DATA](https://github.com/EvilPickle-PCSHSPT/PJ61403_DATA)
