@@ -34,17 +34,17 @@ Train CNN model by using [HAM10000](https://dataverse.harvard.edu/dataset.xhtml?
 After Ensemble using Arithmetic Mean with 3 models
 
 <p>
-    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/cm.png width="230" height="230">
-    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/report.png width="545" height="230">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/README_images/cm.png width="230" height="230">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/README_images/report.png width="545" height="230">
 </p>
 
 
 ### Grad-CAM
 <p>
-    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ad.png width="200" height="200">
-    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/nm.png width="200" height="200">
-    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/ps.png width="200" height="200">
-    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/image/sk.png width="200" height="200">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/README_images/ad.png width="200" height="200">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/README_images/nm.png width="200" height="200">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/README_images/ps.png width="200" height="200">
+    <img src=https://github.com/filmerxyz/JSTP22_SkinDiseaseClassificationUsingMachineLearning/blob/master/README_images/sk.png width="200" height="200">
 </p>
 
 ## Caution
